@@ -14,7 +14,7 @@ class SafeEventEmitter {
   off(event, listener) {
     if (!this._listeners[event]) return;
     this._listeners[event] = this._listeners[event].filter(
-      (l) => l === listener
+      (l) => l !== listener
     );
   }
 
