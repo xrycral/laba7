@@ -22,6 +22,7 @@ class Observable {
 
     return {
       unsubscribe() {
+        isUnsubscribed = true;
         if (cleanup) cleanup();
       },
     };
@@ -32,7 +33,7 @@ class Observable {
       for (const value of values) {
         observer.next(value);
       }
-      observer.complete();
+      
     });
   }
 
